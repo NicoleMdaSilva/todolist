@@ -1,5 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { TodoList } from './todolist/entities/todolist.entity';
+import { todoListModule } from './todolist/todolist.module';
 
 
 @Module({
@@ -10,9 +12,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     username: 'root',
     password: 'root',
     database: 'db_todolist',
-    entities: [],
+    entities: [TodoList],
     synchronize: true
-  })],
+  }),
+todoListModule],
   controllers: [],
   providers: [],
 })
